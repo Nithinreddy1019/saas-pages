@@ -26,7 +26,7 @@ const Hero = () => {
                 </div>
             </div>
             {/* ring-2 */}
-            <div className="absolute md:animate-pulse h-[444px] w-[444px] md:size-[780px] rounded-full border border-dashed border-white/20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="absolute h-[444px] w-[444px] md:size-[780px] rounded-full border border-dashed border-white/20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             </div>
             {/* ring-3 */}
             <div className="absolute h-[544px] w-[544px] md:size-[980px] rounded-full border border-white opacity-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
