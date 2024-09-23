@@ -40,8 +40,8 @@ const Hero = () => {
                     </div>
             </div>
             <div className="container relative mt-16">
-                <h1 className="text-8xl md:text-[168px] md:leading-none font-semibold tracking-tighter bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138,.5))] text-transparent bg-clip-text text-center pb-2">A Page</h1>
-                <p className="text-lg text-white/70 md:text-xl mt-5 text-center max-w-xl mx-auto">
+                <h1 className="text-8xl md:text-[168px] md:leading-none font-semibold tracking-tighter bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138,.5))] text-transparent bg-clip-text text-center pb-2">AI SEO</h1>
+                <p className="text-lg text-white/70 md:text-xl text-center max-w-xl mx-auto">
                     A landing page created to implement framer motion along with nextjs to craft beatiful looking sites. Craft seamless UX with framer and react.
                 </p>
                 <div className="flex justify-center mt-5">

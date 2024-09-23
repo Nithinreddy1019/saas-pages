@@ -1,3 +1,4 @@
+import { Features } from "@/components/features";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import LogoTicker from "@/components/logo-ticker";
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <Hero />
       <LogoTicker />
+      <Features />
     </>
   );
 }
