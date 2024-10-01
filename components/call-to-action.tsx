@@ -19,7 +19,7 @@ export const CallToAction = () => {
                         }}
                     ></div>
                     <div className="relative">
-                        <h2 className="text-5xl md:text- max-w-sm mx-auto tracking-tighter text-center font-medium">
+                        <h2 className="text-5xl md:text-6xl max-w-sm mx-auto tracking-tighter text-center font-medium">
                             AI-driven SEO for everyone.
                         </h2>
                         <p className="text-center text-lg md:text-xl max-w-xs mx-auto text-white/70 tracking-tight px-4 mt-5">
