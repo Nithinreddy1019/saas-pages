@@ -1,13 +1,37 @@
+"use client"
+
 import { Button } from "./ui/button";
 import starBg from "@/assets/stars.png";
 
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
 const Hero = () => {
+
+    const sectionRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ['start end', 'end start']
+    });
+
+    const backgroundPositionY = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+
     return (
-        <section 
+        <motion.section
+            ref={sectionRef}
             className="h-[492px] md:h-[800px] flex items-center overflow-hidden relative [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]" 
             style={{
-            backgroundImage: `url(${starBg.src})`
-        }}
+                backgroundImage: `url(${starBg.src})`,
+                backgroundPositionY,
+            }}
+            animate={{
+                backgroundPositionX: starBg.width
+            }}
+            transition={{
+                repeat: Infinity,
+                ease: "linear",
+                duration: 120
+            }}
         >
             <div className="absolute inset-0 bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,.5)_15%,rgb(14,0,36,.5)_78%,transparent)]"></div>
             {/* planet below */}
@@ -15,7 +39,21 @@ const Hero = () => {
             ">
             </div>
             {/* ring-1 */}
-            <div className="absolute h-[344px] w-[344px] md:size-[580px] border opacity-20 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <motion.div
+                style={{
+                    translateX: "-50%",
+                    translateY: "-50%"
+                }}
+                animate={{
+                    rotate: "1turn"
+                }}
+                transition={{
+                    duration: 60,
+                    repeat: Infinity,
+                    ease: "linear"
+                }}
+                className="absolute h-[344px] w-[344px] md:size-[580px] border opacity-20 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            >
                 <div className="absolute h-2 w-2 top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full">
                 </div>
                 <div className="absolute h-2 w-2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full">
@@ -24,12 +62,40 @@ const Hero = () => {
                     <div className="h-2 w-2 bg-white rounded-full">
                     </div>
                 </div>
-            </div>
+            </motion.div>
             {/* ring-2 */}
-            <div className="absolute h-[444px] w-[444px] md:size-[780px] rounded-full border border-dashed border-white/20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            </div>
+            <motion.div 
+                animate={{
+                    rotate: "-1turn"
+                }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 60,
+                    ease: "linear"
+                }}
+                style={{
+                    translateX: "-50%",
+                    translateY: "-50%"
+                }}
+                className="absolute h-[444px] w-[444px] md:size-[780px] rounded-full border border-dashed border-white/20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            >
+            </motion.div>
             {/* ring-3 */}
-            <div className="absolute h-[544px] w-[544px] md:size-[980px] rounded-full border border-white opacity-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <motion.div 
+                animate={{
+                    rotate: "1turn"
+                }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 120,
+                    ease: "linear"
+                }}
+                style={{
+                    translateX: "-50%",
+                    translateY: "-50%"
+                }}
+                className="absolute h-[544px] w-[544px] md:size-[980px] rounded-full border border-white opacity-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            >
                 <div className="absolute h-2 w-2 top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full">
                     </div>
                     <div className="absolute h-2 w-2 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full">
@@ -38,7 +104,7 @@ const Hero = () => {
                         <div className="h-2 w-2 bg-white rounded-full">
                         </div>
                     </div>
-            </div>
+            </motion.div>
             <div className="container relative mt-16">
                 <h1 className="text-8xl md:text-[168px] md:leading-none font-semibold tracking-tighter bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138,.5))] text-transparent bg-clip-text text-center pb-2">AI SEO</h1>
                 <p className="text-lg text-white/70 md:text-xl text-center max-w-xl mx-auto">
@@ -50,7 +116,7 @@ const Hero = () => {
                     </Button>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
  
